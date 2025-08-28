@@ -8,7 +8,7 @@ hist_data = [
     rng(1).standard_normal(200),
     rng(2).standard_normal(200) + 2,
 ]
-group_labels = ["Group A", "Group B", "Group C"]
+group_labels = ["Group C", "Group B", "Group A"]
 
 fig = ff.create_distplot(
     hist_data, group_labels, bin_size=[0.1, 0.25, 0.5]
