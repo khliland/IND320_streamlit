@@ -4,9 +4,9 @@ from numpy.random import default_rng as rng
 
 "A chart showing random data"
 hist_data = [
-    rng(0).standard_normal(200) - 2,
+    rng(0).standard_normal(200) - 3,
     rng(1).standard_normal(200),
-    rng(2).standard_normal(200) + 2,
+    rng(2).standard_normal(200) + 3,
 ]
 group_labels = ["Group C", "Group B", "Group A"]
 
