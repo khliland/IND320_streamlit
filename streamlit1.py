@@ -1,6 +1,8 @@
-import plotly.figure_factory as ff
+import numpy as np
+import plotly.graph_objects as go
 import streamlit as st
 from numpy.random import default_rng as rng
+from scipy.stats import gaussian_kde
 
 "A chart showing random data"
 hist_data = [
@@ -10,8 +12,10 @@ hist_data = [
 ]
 group_labels = ["Group C", "Group B", "Group A"]
 
-fig = ff.create_distplot(
-    hist_data, group_labels, bin_size=[0.1, 0.25, 0.5]
-)
+fig = go.Figure()
+for data, label in zip(hist_data, group_labels):
+    kde = gaussian_kde(data)
+    x = np.linspace(data.min(), data.max(), 200)
+    fig.add_trace(go.Scatter(x=x, y=kde(x), mode="lines", fill="tozeroy", name=label))
 
 st.plotly_chart(fig)
