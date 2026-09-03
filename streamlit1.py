@@ -20,3 +20,5 @@ for data, label in zip(hist_data, group_labels):
 
 st.write("This chart shows distributions of three groups of random data using kernel density estimation (KDE).")
 st.plotly_chart(fig)
+st.write("The KDE provides a smooth estimate of the probability density function of the random variables, allowing for better visualization of the underlying distributions."
+         )
