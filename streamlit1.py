@@ -10,7 +10,7 @@ hist_data = [
     rng(1).standard_normal(200),
     rng(2).standard_normal(200) + 3,
 ]
-group_labels = ["Group C", "Group B", "Group A"]
+group_labels = ["Group A", "Group B", "Group C"]
 
 fig = go.Figure()
 for data, label in zip(hist_data, group_labels):
