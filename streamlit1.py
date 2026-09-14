@@ -10,7 +10,7 @@ hist_data = [
     rng(1).standard_normal(200),
     rng(2).standard_normal(200) + 3,
 ]
-group_labels = ["Group C", "Group B", "Group A"]
+group_labels = ["Group A", "Group B", "Group C"]
 
 fig = go.Figure()
 for data, label in zip(hist_data, group_labels):
@@ -18,5 +18,7 @@ for data, label in zip(hist_data, group_labels):
     x = np.linspace(data.min(), data.max(), 200)
     fig.add_trace(go.Scatter(x=x, y=kde(x), mode="lines", fill="tozeroy", name=label))
 
-st.write("This chart shows distributions of three groups of random data using Kernel Density Estimation (KDE).")
+st.write("This chart shows distributions of three groups of random data using kernel density estimation (KDE).")
 st.plotly_chart(fig)
+st.write("The KDE provides a smooth estimate of the probability density function of the random variables, allowing for better visualization of the underlying distributions."
+         )
